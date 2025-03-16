@@ -23,7 +23,7 @@ public class DataSourse {
   }
 
   public static Customer getCustomer(String username) {
-    String sql = "select * from customer where username = ?";
+    String sql = "select * from customers where username = ?";
     Customer customer = null;
     try (Connection connection = connect();
         PreparedStatement statement = connection.prepareStatement(sql)) {
