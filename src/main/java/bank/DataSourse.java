@@ -24,13 +24,13 @@ public class DataSourse {
 
   public static Customer getCustomer(String username) {
     String sql = "select * from customers where username = ?";
-    Customer customers = null;
+    Customer customer = null;
     try (Connection connection = connect();
         PreparedStatement statement = connection.prepareStatement(sql)) {
 
       statement.setString(1, username);
       try (ResultSet resultSet = statement.executeQuery()) {
-        customers = new Customer(
+        customer = new Customer(
             resultSet.getInt("id"),
             resultSet.getString("name"),
             resultSet.getString("username"),
@@ -42,12 +42,12 @@ public class DataSourse {
       e.printStackTrace();
     }
 
-    return customers;
+    return customer;
   }
 
   public static void main(String[] args) {
 
-    Customer customers = getCustomer("twest8o@friendfeed.com");
-    System.out.println(customers.getId());
+    Customer customer = getCustomer("twest8o@friendfeed.com");
+    System.out.println(customer.getId());
   }
 }
