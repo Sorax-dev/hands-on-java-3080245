@@ -24,17 +24,17 @@ public class DataSourse {
 
   public static Customer getCustomer(String username) {
     String sql = "select * from customers where username = ?";
-    Customer customer = null;
+    Customer customers = null;
     try (Connection connection = connect();
         PreparedStatement statement = connection.prepareStatement(sql)) {
 
       statement.setString(1, username);
       try (ResultSet resultSet = statement.executeQuery()) {
-        customer = new Customer(
+        customers = new Customer(
             resultSet.getInt("id"),
             resultSet.getString("name"),
             resultSet.getString("username"),
-            resultSet.getString("passwoed"),
+            resultSet.getString("password"),
             resultSet.getInt("account_id"));
       }
 
@@ -42,12 +42,12 @@ public class DataSourse {
       e.printStackTrace();
     }
 
-    return customer;
+    return customers;
   }
 
   public static void main(String[] args) {
 
-    Customer customer = getCustomer("ttoulchi5@ehow.com");
-    System.out.println(customer.getName());
+    Customer customers = getCustomer("twest8o@friendfeed.com");
+    System.out.println(customers.getId());
   }
 }
