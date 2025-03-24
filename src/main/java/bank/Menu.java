@@ -61,6 +61,13 @@ public static void main(String[] args) {
           System.out.println("How much would you like to deposit?");
          amount = scanner.nextDouble();
          account.deposit(amount);
+         break;
+
+         case 2:
+         System.out.println("How much do you like to withdraw?");
+         amount = scanner.nextDouble();
+         account.withdraw(amount);
+         break;
       }
     }
   }
