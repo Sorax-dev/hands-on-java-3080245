@@ -68,6 +68,19 @@ public static void main(String[] args) {
          amount = scanner.nextDouble();
          account.withdraw(amount);
          break;
+
+         case 3:
+         System.out.println("Current balance: " + account.getBalance());
+         break;
+        
+         case 4:
+         Authentificator.logout(customer);
+         System.out.println("Thanks for banking at Globe Bank International!");
+         break;
+
+         default:
+         System.out.println("Invalid option. Please try again");
+          break;
       }
     }
   }
