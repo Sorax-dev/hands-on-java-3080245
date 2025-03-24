@@ -42,6 +42,26 @@ public static void main(String[] args) {
   }
 
   private void showMenu(Customer customer, Account account){
-    
+    int selection = 0;
+
+    while(selection != 4 && customer.isAuthentificated()){
+      System.out.println("================================================");
+      System.out.println("Please select one of the following options");
+      System.out.println("1: Deposit");
+      System.out.println("2: Withdraw");
+      System.out.println("3: Check Balance");
+      System.out.println("3: Exit");
+      System.out.println("================================================");
+
+      selection = scanner.nextInt();
+      double amount = 0;
+
+      switch (selection) {
+        case 1:
+          System.out.println("How much would you like to deposit?");
+         amount = scanner.nextDouble();
+         account.deposit(amount);
+      }
+    }
   }
 }
