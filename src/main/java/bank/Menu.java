@@ -52,7 +52,7 @@ public static void main(String[] args) {
       System.out.println("1: Deposit");
       System.out.println("2: Withdraw");
       System.out.println("3: Check Balance");
-      System.out.println("3: Exit");
+      System.out.println("4: Exit");
       System.out.println("================================================");
 
       selection = scanner.nextInt();
