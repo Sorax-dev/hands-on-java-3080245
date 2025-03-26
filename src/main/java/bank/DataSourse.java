@@ -81,10 +81,4 @@ public class DataSourse {
       e.printStackTrace();
     }
   }
-  public static void main(String[] args) {
-
-    Customer customer = getCustomer("twest8o@friendfeed.com");
-    Account account = getAccount(customer.getAccountId());
-    System.out.println(account.getBalance());
-  }
 }
